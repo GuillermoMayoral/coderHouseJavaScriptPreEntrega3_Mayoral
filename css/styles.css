@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Nunito', sans-serif;
+
+}
+
+img {
+    height: 4rem;
+}
+
+/* aqui empieza el head html */
+
+.miniTop {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: #F5F5F5;
+    height: 3rem;
+}
+
+.navRigth {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: end;
+}
+
+.miniTop div img {
+    height: 1rem;
+    padding: 1rem;
+    margin-left: 2rem;
+}
+
+.principalHeader {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tittle {
+    text-align: center;
+    justify-items: center;
+    font-size: 45px;
+}
+
+.principalHeader img {
+    height: 3.7rem;
+    padding: .3rem;
+    margin-left: 2rem;
+}
+
+
+/* aqui empieza el main html */
+
+.topMain {
+    background-color: #F5F5F5;
+    height: 4rem;
+}
+
+.bannerPromo {
+    width: 100%;
+    height: 25rem;
+    background-size: cover;
+    background-image: url(../img/fondoPromo.jpg.jpg);
+}
+
+.infoPromo {
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.infoPromo p {
+    font-size: 20px;
+}
+
+.infoPromo h2 {
+    font-size: 40px;
+    font-family: 'Bakbak One', 'Nunito', sans-serif;
+    text-align: center;
+    margin: .5rem;
+}
+
+.infoPromo2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infoPromo2 h3 {
+    font-size: 25px;
+}
+
+.verMas {
+    color: #F5F5F5;
+    background-color: black;
+    margin: .5rem;
+    padding: .5rem;
+    border: 1px solid white;
+    border-radius: 5%;
+    transition: 1s;
+    text-decoration: none;
+}
+
+.verMas:hover {
+    color: black;
+    background-color: #F5F5F5;
+    border: 1px solid black;
+    transition: 1s;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
