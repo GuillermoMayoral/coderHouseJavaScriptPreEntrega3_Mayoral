@@ -37,15 +37,52 @@
         <div class="principalHeader">
             <div><img src="../img/principalLogo.png.png" alt=""></div>
             <div>
-                <h1 class="tittle">TOP RUNNING</h1>
+                <h1 id="title">TOP RUNNING</h1>
             </div>
         </div>
     </header>
 
-    <main>
+    <main class="mainContacto">
+        <div>
+            <h2>¿Tienes una duda y necesitas ayuda personalizada?</h2>
+            <p>Escribenos y nos pondremos en contacto contigo</p>
+        </div>
+        <form class="formulario" action="GET">
+            <label for="name">Nombre(s)</label>
+            <input name="name" placeholder="ejem: Juan Diego" id="nombreForm" type="text">
 
+            <label for="lastName">Apellidos</label>
+            <input name="lastName" placeholder="ejem: Martinez Perez" id="apellidoForm" type="text">
+
+            <label for="cellPhone">Numero celular</label>
+            <input name="cellPhone" placeholder="ejem: 868 455 6845" id="numeroForm" type="number">
+
+            <label for="eMail">Correo electronico</label>
+            <input name="eMail" placeholder="ejem: ejemplo@mail.com" id="eMailForm" type="email">
+
+            <input class="botonContacto" type="submit" value="Contactar...">
+        </form>
+        <div id="notificacionContacto">
+            <h2 id="confirmacionContacto"></h2>
+        </div>
     </main>
 
+    <footer>
+        <div class="footerFlex">
+            <div class="foo1">
+                <h2>Top Running</h2>
+                <p>Calzado con inovacion</p>
+            </div>
+            <div class="foo2"><a href="#title">Regreso a Inicio</a>
+            </div>
+            <div class="foo3">
+                <h2>Contacto</h2>
+                <a href="./contacto.html">Contactanos...</a>
+            </div>
+
+        </div>
+        <div class="copyrigth">© 2023 Top Running, Inc. Todos los derechos reservados</div>
+    </footer>
 </body>
 
 </html>
