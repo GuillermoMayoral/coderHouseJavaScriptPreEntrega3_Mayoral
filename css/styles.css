@@ -235,3 +235,175 @@ footer {
 #notificacionContacto {
     background-color: white;
 }
+
+/* inicio de productos */
+
+.mainProductos {
+    background-color: white;
+}
+
+.productoTitle {
+    background-color: #F5F5F5;
+    font-family: 'Bakbak One', 'Nunito', sans-serif;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    padding: 2.2rem;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem;
+}
+
+.card {
+    display: grid;
+    background-color: #F5F5F5;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    grid-template-columns: 1fr 1fr;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.infoProduct {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.infoProduct h2,
+p {
+    font-family: 'Bakbak One', 'Nunito', sans-serif;
+    font-weight: 100;
+}
+
+.infoTamaño {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: .5rem;
+    gap: .5rem;
+
+
+}
+
+.infoTamaño input {
+    display: none;
+}
+
+.infoTamaño label {
+    display: flex;
+    border: 1px solid black;
+    justify-content: center;
+}
+
+.infoTamaño label:hover {
+    background-color: white;
+}
+
+.infoTamaño input[type="radio"]:checked+label {
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+}
+
+.costo {
+    display: flex;
+    gap: .5rem;
+}
+
+.costo input {
+    background-color: #a39c9c;
+    border-radius: 5px;
+}
+
+.costo input:hover {
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.carritoCompras h2 {
+    background-color: #F5F5F5;
+
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    padding: 2.2rem;
+}
+
+#carroDeCompras {
+    background-color: white;
+    height: 2rem;
+}
+
+.datosNota {
+    background-color: #F5F5F5;
+    padding: 1rem;
+}
+
+.formulario2 {
+    border: 2px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-around;
+    background-color: #a39c9c;
+    height: 30rem;
+    width: 20rem;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: 2rem 8rem;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.formulario2 label {
+    font-size: 25px;
+}
+
+.formulario2 input {
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.botonContacto2 {
+    color: #F5F5F5;
+    background-color: black;
+    margin: .5rem;
+    padding: .5rem;
+    border: 1px solid white;
+    border-radius: 5%;
+    transition: 1s;
+    height: 35px;
+    width: 10rem;
+    align-self: center;
+}
+
+.botonContacto2:hover {
+    color: black;
+    background-color: #F5F5F5;
+    border: 1px solid black;
+    transition: 1s;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    text-decoration: underline;
+}
+
+
+.factura {
+    background-color: #a39c9c;
+    margin: 1rem 5rem 1rem 5rem;
+    border: 1px solid black;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.factura div p {
+    font-size: 20px;
+}
