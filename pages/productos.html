@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap" rel="stylesheet" />
 
+    <script defer src="../js/scripts.js"></script>
+
     <title>Top Running</title>
 </head>
 
@@ -59,7 +61,7 @@
                     </div>
                     <div class="costo">
                         <h3>$2,499.00</h3>
-                        <input type="submit" value="Agregar a carrito">
+                        <input id="btnNike" type="submit" value="Agregar a carrito">
                     </div>
                 </div>
             </div>
@@ -69,9 +71,6 @@
                     <h2>Tenis Adidas</h2>
                     <p>Tamaños:</p>
                     <div class="infoTamaño">
-                        <!-- <a href="#">#26</a>
-                        <a href="#">#27</a>
-                        <a href="#">#28</a> -->
                         <input type="radio" name="tamaños2" id="26-2">
                         <label class="opt" for="26-2">#26</label>
                         <input type="radio" name="tamaños2" id="27-2">
@@ -81,7 +80,7 @@
                     </div>
                     <div class="costo">
                         <h3>$2,099.00</h3>
-                        <input type="submit" value="Agregar a carrito">
+                        <input id="btnAdidas" type="submit" value="Agregar a carrito">
                     </div>
                 </div>
             </div>
@@ -100,7 +99,7 @@
                     </div>
                     <div class="costo">
                         <h3>$2,299.00</h3>
-                        <input type="submit" value="Agregar a carrito">
+                        <input id="btnSketchers" type="submit" value="Agregar a carrito">
                     </div>
                 </div>
             </div>
@@ -108,7 +107,13 @@
         <div class="carritoCompras">
             <h2>carrito</h2>
         </div>
-        <div id="carroDeCompras"></div>
+        <div class="carroDeComprasTenis">
+            <div id="carroDeComprasTenis">
+                <h2>Productos</h2>
+                <!-- aqui se guardan los productos del carrito -->
+
+            </div>
+        </div>
         <div class="datosNota">
             <form class="formulario2" action="GET">
                 <h1>Datos de Factura</h1>
@@ -147,14 +152,10 @@
             </div>
             <div>
                 <p>total:</p>
-                <p></p>
+                <p id="descuento">Descuento: </p>
                 <p></p>
             </div>
         </div>
-
-
-
-
     </main>
     <footer>
         <div class="footerFlex">

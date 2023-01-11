@@ -11,6 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap" rel="stylesheet">
 
+    <script defer src="../js/scripts.js"></script>
+
+    <script defer src="../js/scripts.js"></script>
+
     <title>Top Running</title>
 </head>
 
@@ -46,7 +50,7 @@
         </div>
         <form class="formulario" action="GET">
             <label for="name">Nombre(s)</label>
-            <input name="name" placeholder="ejem: Juan Diego" id="nombreForm" type="text">
+            <input name="name" placeholder="ejem: Juan Diego" id="nombreForm" type="text" required>
 
             <label for="lastName">Apellidos</label>
             <input name="lastName" placeholder="ejem: Martinez Perez" id="apellidoForm" type="text">
@@ -57,7 +61,7 @@
             <label for="eMail">Correo electronico</label>
             <input name="eMail" placeholder="ejem: ejemplo@mail.com" id="eMailForm" type="email">
 
-            <input class="botonContacto" type="submit" value="Contactar...">
+            <input id="contactando" class="botonContacto" type="submit" value="Contactar...">
         </form>
         <div id="notificacionContacto">
             <h2 id="confirmacionContacto"></h2>

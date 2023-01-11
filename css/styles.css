@@ -336,10 +336,56 @@ p {
     padding: 2.2rem;
 }
 
-#carroDeCompras {
-    background-color: white;
-    height: 2rem;
+/* --------------------------------cartas de carrito */
+
+.carroDeComprasTenis {
+    display: flex;
+    justify-content: center;
 }
+
+#carroDeComprasTenis {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 2px solid black;
+    width: 40rem;
+    margin: 1rem;
+}
+
+#carroDeComprasTenis h2 {
+    align-self: center;
+    border-bottom: 3px solid black;
+    margin-bottom: 2rem;
+}
+
+.cardShop {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 30rem;
+    border-bottom: 3px solid black;
+    margin: 1rem;
+}
+
+.cardShop img {
+    width: 100%;
+    height: auto;
+    margin-right: 10px;
+    border-right: 1px solid black;
+}
+
+.cardShop div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+#eliminarDeCarrito {
+    background-color: red;
+    color: white;
+}
+
+/* --------------------------------cartas de carrito */
 
 .datosNota {
     background-color: #F5F5F5;
