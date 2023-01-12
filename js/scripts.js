@@ -69,6 +69,7 @@ if (btnNike) {
         carritoCompras[varCarrito] = 2499;
         varCarrito = varCarrito + 1;
         carritoComprasDatos.push("Tenis: nike.  $2499.00")
+        sessionStorage.setItem('producto1',JSON.stringify(tenisNike))
     })
 }
 
@@ -78,6 +79,7 @@ if (btnAdidas) {
         carritoCompras[varCarrito] = 2499;
         varCarrito = varCarrito + 1;
         carritoComprasDatos.push("Tenis: adidas.  $2099.00")
+        sessionStorage.setItem('producto2',JSON.stringify(tenisAdidas))
     })
 }
 
@@ -87,7 +89,7 @@ if (btnSketchers) {
         cuadroCarrito.innerHTML += '<div id="tenisSketchers" class="cardShop"><img src="' + tenisSketchers.img + '" alt="tenis sketchers"><div><p>Modelo: ' + tenisSketchers.marca + '</p><p>costo: ' + tenisSketchers.costo + '</p></div></div><div></div>'
         carritoCompras[varCarrito] = 2499;
         carritoComprasDatos.push("Tenis: sketchers.  $2299.00")
-
+        sessionStorage.setItem('producto3',JSON.stringify(tenisSketchers))
     })
 }
 
