@@ -129,7 +129,7 @@
                 <label for="eMail">Correo electronico</label>
                 <input name="eMail" placeholder="ejem: ejemplo@mail.com" id="eMailForm" type="email">
 
-                <input class="botonContacto2" type="submit" value="Ir a pagar">
+                <input id="pagarCarro" class="botonContacto2" type="submit" value="Ir a pagar">
             </form>
             <div id="notificacionContacto">
                 <h2 id="confirmacionContacto"></h2>
@@ -137,7 +137,7 @@
         </div>
 
         <div class="factura">
-            <div>
+            <div id="datosFactura">
                 <h1>Factura</h1>
                 <p>Nombre: </p>
                 <p>Apellidos: </p>
@@ -145,14 +145,11 @@
                 <p>E-m@il: </p>
             </div>
             <div>
-                <h2>productos:</h2>
-                <p></p>
-                <p></p>
-                <p></p>
+                <h2 id="productosFact">productos:</h2>
+                <div></div>
             </div>
-            <div>
+            <div id="datosFacturaTotal">
                 <p>total:</p>
-                <p id="descuento">Descuento: </p>
                 <p></p>
             </div>
         </div>
