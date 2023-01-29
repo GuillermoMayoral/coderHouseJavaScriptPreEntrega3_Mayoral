@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap" rel="stylesheet" />
 
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script defer src="../js/scripts.js"></script>
 
     <title>Top Running</title>
@@ -46,63 +48,13 @@
             <h2>Nuestros productos</h2>
         </div>
         <div class="productos">
-            <div class="card">
-                <div><img src="../img/productos/producto1.png.png" alt="tenis nike"></div>
-                <div class="infoProduct">
-                    <h2>Tenis Nike</h2>
-                    <p>Tamaños:</p>
-                    <div class="infoTamaño">
-                        <input type="radio" name="tamaños1" id="26-1">
-                        <label class="opt" for="26-1">#26</label>
-                        <input type="radio" name="tamaños1" id="27-1">
-                        <label class="opt" for="27-1">#27</label>
-                        <input type="radio" name="tamaños1" id="28-1">
-                        <label class="opt" for="28-1">#28</label>
-                    </div>
-                    <div class="costo">
-                        <h3>$2,499.00</h3>
-                        <input id="btnNike" type="submit" value="Agregar a carrito">
-                    </div>
-                </div>
+            <div class="productosData"></div>
+            <div class="inputsCarro">
+                <input id="btnNike" type="submit" value="Agregar a carrito">
+                <input id="btnAdidas" type="submit" value="Agregar a carrito">
+                <input id="btnSketchers" type="submit" value="Agregar a carrito">
             </div>
-            <div class="card">
-                <div><img src="../img/productos/producto2.png.png" alt="tenis adidas"></div>
-                <div class="infoProduct">
-                    <h2>Tenis Adidas</h2>
-                    <p>Tamaños:</p>
-                    <div class="infoTamaño">
-                        <input type="radio" name="tamaños2" id="26-2">
-                        <label class="opt" for="26-2">#26</label>
-                        <input type="radio" name="tamaños2" id="27-2">
-                        <label class="opt" for="27-2">#27</label>
-                        <input type="radio" name="tamaños2" id="28-2">
-                        <label class="opt" for="28-2">#28</label>
-                    </div>
-                    <div class="costo">
-                        <h3>$2,099.00</h3>
-                        <input id="btnAdidas" type="submit" value="Agregar a carrito">
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div><img src="../img/productos/producto3.png.png" alt="tenis sketchers"></div>
-                <div class="infoProduct">
-                    <h2>Tenis Sketchers</h2>
-                    <p>Tamaños:</p>
-                    <div class="infoTamaño">
-                        <input type="radio" name="tamaños3" id="26-3">
-                        <label class="opt" for="26-3">#26</label>
-                        <input type="radio" name="tamaños3" id="27-3">
-                        <label class="opt" for="27-3">#27</label>
-                        <input type="radio" name="tamaños3" id="28-3">
-                        <label class="opt" for="28-3">#28</label>
-                    </div>
-                    <div class="costo">
-                        <h3>$2,299.00</h3>
-                        <input id="btnSketchers" type="submit" value="Agregar a carrito">
-                    </div>
-                </div>
-            </div>
+
         </div>
         <div class="carritoCompras">
             <h2>carrito</h2>

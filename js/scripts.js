@@ -49,49 +49,7 @@ const tenisSketchers = {
 const carritoCompras = []
 const carritoComprasDatos = []
 
-//selectores de productos
-let btnNike = document.getElementById('btnNike')
-let btnAdidas = document.getElementById('btnAdidas')
-let btnSketchers = document.getElementById('btnSketchers')
 
-
-
-let cuadroCarrito = document.getElementById('carroDeComprasTenis')
-
-let varCarrito = 0;
-let varCarritoDatos = 0;
-
-console.log(varCarrito);
-
-if (btnNike) {
-    btnNike.addEventListener('click', () => {
-        cuadroCarrito.innerHTML += '<div id="' + varCarrito + '" class="cardShop"><img src="' + tenisNike.img + '" alt="tenis nike"><div><p>Modelo: ' + tenisNike.marca + '</p><p>costo: ' + tenisNike.costo + '</p></div></div>'
-        carritoCompras[varCarrito] = 2499;
-        varCarrito = varCarrito + 1;
-        carritoComprasDatos.push("Tenis: nike.  $2499.00")
-        sessionStorage.setItem('producto1',JSON.stringify(tenisNike))
-    })
-}
-
-if (btnAdidas) {
-    btnAdidas.addEventListener('click', () => {
-        cuadroCarrito.innerHTML += '<div id="tenisAdidas" class="cardShop"><img src="' + tenisAdidas.img + '" alt="tenis adidas"><div><p>Modelo: ' + tenisAdidas.marca + '</p><p>costo: ' + tenisAdidas.costo + '</p></div></div>'
-        carritoCompras[varCarrito] = 2499;
-        varCarrito = varCarrito + 1;
-        carritoComprasDatos.push("Tenis: adidas.  $2099.00")
-        sessionStorage.setItem('producto2',JSON.stringify(tenisAdidas))
-    })
-}
-
-
-if (btnSketchers) {
-    btnSketchers.addEventListener('click', () => {
-        cuadroCarrito.innerHTML += '<div id="tenisSketchers" class="cardShop"><img src="' + tenisSketchers.img + '" alt="tenis sketchers"><div><p>Modelo: ' + tenisSketchers.marca + '</p><p>costo: ' + tenisSketchers.costo + '</p></div></div><div></div>'
-        carritoCompras[varCarrito] = 2499;
-        carritoComprasDatos.push("Tenis: sketchers.  $2299.00")
-        sessionStorage.setItem('producto3',JSON.stringify(tenisSketchers))
-    })
-}
 
 
 //valores form productos
@@ -137,8 +95,6 @@ if (btnPagar) {
 
         let total = carritoCompras.reduce(sumar);
 
-        console.log(total);
-
         let promoPar = carritoCompras.length;
         let porciento;
         let porciento2;
@@ -160,7 +116,7 @@ if (btnPagar) {
         datosFacturaTotal.innerHTML = '<p>Total: $' + total + '.00</p>';
 
         if (porciento == "20%") {
-            datosFacturaTotal.innerHTML += '<p>Descuento: ' + porciento + '</p><p>Total con descuento aplicado: ' + totalMenosDescuento + '</p>'
+            datosFacturaTotal.innerHTML += '<p>Descuento: ' + porciento + '</p><p>Total con descuento aplicado: $' + totalMenosDescuento + '</p>'
         }
 
         console.log(aplicarPromo(promoPar, darPorcentaje(porciento2 * promoPar)));
@@ -172,4 +128,88 @@ if (btnPagar) {
         }
 
     });
+}
+
+//sweet alert
+
+btnPagar.addEventListener('click', () => {
+    Swal.fire(
+        'Felicidades!',
+        'Su factura se ha generado!',
+        'success'
+    )
+})
+
+
+//fetch
+const lista = document.querySelector(".productosData")
+
+
+const esperarApi = async () => {
+    const resp = await fetch("../data.json");
+    const data = await resp.json();
+
+    data.forEach((producto) => {
+        const div = document.createElement("div");
+        div.innerHTML = `
+        <div class="card">
+            <div><img src="${producto.img}" alt="${producto.nombre}"></div>
+            <div class="infoProduct">
+                <h2>${producto.nombre}</h2>
+                <div class="costo">
+                    <h2>${producto.precio}</h2>
+                </div>
+            </div>
+        </div>
+
+        
+        `;
+
+        lista.append(div);
+    })
+}
+
+esperarApi();
+
+
+//selectores de productos
+let btnNike = document.getElementById('btnNike')
+let btnAdidas = document.getElementById('btnAdidas')
+let btnSketchers = document.getElementById('btnSketchers')
+
+
+
+let cuadroCarrito = document.getElementById('carroDeComprasTenis')
+
+let varCarrito = 0;
+let varCarritoDatos = 0;
+
+if (btnNike) {
+    btnNike.addEventListener('click', () => {
+        cuadroCarrito.innerHTML += '<div id="' + varCarrito + '" class="cardShop"><img src="' + tenisNike.img + '" alt="tenis nike"><div><p>Modelo: ' + tenisNike.marca + '</p><p>costo: ' + tenisNike.costo + '</p></div></div>'
+        carritoCompras[varCarrito] = 2499;
+        varCarrito = varCarrito + 1;
+        carritoComprasDatos.push("Tenis: nike.  $2499.00")
+        sessionStorage.setItem('producto1', JSON.stringify(tenisNike))
+    })
+}
+
+if (btnAdidas) {
+    btnAdidas.addEventListener('click', () => {
+        cuadroCarrito.innerHTML += '<div id="tenisAdidas" class="cardShop"><img src="' + tenisAdidas.img + '" alt="tenis adidas"><div><p>Modelo: ' + tenisAdidas.marca + '</p><p>costo: ' + tenisAdidas.costo + '</p></div></div>'
+        carritoCompras[varCarrito] = 2499;
+        varCarrito = varCarrito + 1;
+        carritoComprasDatos.push("Tenis: adidas.  $2099.00")
+        sessionStorage.setItem('producto2', JSON.stringify(tenisAdidas))
+    })
+}
+
+
+if (btnSketchers) {
+    btnSketchers.addEventListener('click', () => {
+        cuadroCarrito.innerHTML += '<div id="tenisSketchers" class="cardShop"><img src="' + tenisSketchers.img + '" alt="tenis sketchers"><div><p>Modelo: ' + tenisSketchers.marca + '</p><p>costo: ' + tenisSketchers.costo + '</p></div></div><div></div>'
+        carritoCompras[varCarrito] = 2499;
+        carritoComprasDatos.push("Tenis: sketchers.  $2299.00")
+        sessionStorage.setItem('producto3', JSON.stringify(tenisSketchers))
+    })
 }

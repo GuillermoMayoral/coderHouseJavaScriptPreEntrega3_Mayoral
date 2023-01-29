@@ -253,9 +253,33 @@ footer {
 
 .productos {
     display: grid;
+    grid-template-rows: 2fr 1fr;
+    /* gap: 2rem; */
+    margin: 2rem;
+}
+
+.productosData {
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
-    margin: 2rem;
+    margin: 2rem 2rem 0 2rem;
+}
+
+.inputsCarro {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    margin: 10px 2rem 2rem 2rem;
+}
+
+.inputsCarro input {
+    background-color: #a39c9c;
+    border-radius: 5px;
+}
+
+.inputsCarro input:hover {
+    background-color: #ffffff;
+    border-radius: 5px;
 }
 
 .card {
