@@ -1,5 +1,5 @@
 [
-    {"nombre": "Tenis Nike", "precio": "$2,499.00", "img": "/img/productos/producto1.png.png"},
-    {"nombre": "Tenis Adidas", "precio": "$2,099.00", "img": "/img/productos/producto2.png.png"},
-    {"nombre": "Tenis Sketchers", "precio": "$2,299.00", "img": "/img/productos/producto3.png.png"}
+    {"nombre": "Tenis Nike", "precio": 2499, "img": "/img/productos/producto1.png.png"},
+    {"nombre": "Tenis Adidas", "precio": 2099, "img": "/img/productos/producto2.png.png"},
+    {"nombre": "Tenis Sketchers", "precio": 2299, "img": "/img/productos/producto3.png.png"}
 ]

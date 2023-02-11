@@ -8,7 +8,6 @@ let lastNameContact = document.getElementById('apellidoForm');
 let cellContact = document.getElementById('numeroForm')
 let emailContact = document.getElementById('eMailForm');
 
-
 let btnContact = document.getElementById('contactando');
 
 if (btnContact) {
@@ -119,9 +118,6 @@ if (btnPagar) {
             datosFacturaTotal.innerHTML += '<p>Descuento: ' + porciento + '</p><p>Total con descuento aplicado: $' + totalMenosDescuento + '</p>'
         }
 
-        console.log(aplicarPromo(promoPar, darPorcentaje(porciento2 * promoPar)));
-
-
         for (i = 0; i < carritoComprasDatos.length; i++) {
             let momento = carritoComprasDatos[i];
             carroFact.innerHTML += '<p>' + momento + '</p>';
@@ -131,14 +127,16 @@ if (btnPagar) {
 }
 
 //sweet alert
+if (btnPagar) {
+    btnPagar.addEventListener('click', () => {
+        Swal.fire(
+            'Felicidades!',
+            'Su factura se ha generado!',
+            'success'
+        )
+    })
+}
 
-btnPagar.addEventListener('click', () => {
-    Swal.fire(
-        'Felicidades!',
-        'Su factura se ha generado!',
-        'success'
-    )
-})
 
 
 //fetch
@@ -157,7 +155,7 @@ const esperarApi = async () => {
             <div class="infoProduct">
                 <h2>${producto.nombre}</h2>
                 <div class="costo">
-                    <h2>${producto.precio}</h2>
+                    <h2>$${producto.precio}</h2>
                 </div>
             </div>
         </div>
@@ -167,6 +165,41 @@ const esperarApi = async () => {
 
         lista.append(div);
     })
+
+    const carroNike = data[0]
+    const carroAdidas = data[1]
+    const carroSketchers = data[2]
+
+    if (btnNike) {
+        btnNike.addEventListener('click', () => {
+            cuadroCarrito.innerHTML += `<div class="cardShop"><img src="${carroNike.img}" alt="tenis adidas"><div><p>Modelo:${carroNike.nombre}</p><p>costo:$${carroNike.precio}</p></div></div>`
+            carritoCompras[varCarrito] = parseInt(`${carroNike.precio}`);
+            varCarrito = varCarrito + 1;
+            carritoComprasDatos.push(`Tenis: ${carroNike.nombre}. ${carroNike.precio}`)
+            sessionStorage.setItem('producto1', JSON.stringify(tenisNike))
+        })
+    }
+
+    if (btnAdidas) {
+        btnAdidas.addEventListener('click', () => {
+            cuadroCarrito.innerHTML += `<div class="cardShop"><img src="${carroAdidas.img}" alt="tenis adidas"><div><p>Modelo:${carroAdidas.nombre}</p><p>costo:$${carroAdidas.precio}</p></div></div>`
+            carritoCompras[varCarrito] = parseInt(`${carroAdidas.precio}`);
+            varCarrito = varCarrito + 1;
+            carritoComprasDatos.push(`Tenis: ${carroAdidas.nombre}. ${carroAdidas.precio}`)
+            sessionStorage.setItem('producto2', JSON.stringify(tenisAdidas))
+
+        })
+    }
+
+    if (btnSketchers) {
+        btnSketchers.addEventListener('click', () => {
+            cuadroCarrito.innerHTML += `<div class="cardShop"><img src="${carroSketchers.img}" alt="tenis adidas"><div><p>Modelo:${carroSketchers.nombre}</p><p>costo:$${carroSketchers.precio}</p></div></div>`
+            carritoCompras[varCarrito] = parseInt(`${carroSketchers.precio}`);
+            varCarrito = varCarrito + 1;
+            carritoComprasDatos.push(`Tenis: ${carroSketchers.nombre}. ${carroSketchers.precio}`)
+            sessionStorage.setItem('producto3', JSON.stringify(tenisSketchers))
+        })
+    }
 }
 
 esperarApi();
@@ -183,33 +216,3 @@ let cuadroCarrito = document.getElementById('carroDeComprasTenis')
 
 let varCarrito = 0;
 let varCarritoDatos = 0;
-
-if (btnNike) {
-    btnNike.addEventListener('click', () => {
-        cuadroCarrito.innerHTML += '<div id="' + varCarrito + '" class="cardShop"><img src="' + tenisNike.img + '" alt="tenis nike"><div><p>Modelo: ' + tenisNike.marca + '</p><p>costo: ' + tenisNike.costo + '</p></div></div>'
-        carritoCompras[varCarrito] = 2499;
-        varCarrito = varCarrito + 1;
-        carritoComprasDatos.push("Tenis: nike.  $2499.00")
-        sessionStorage.setItem('producto1', JSON.stringify(tenisNike))
-    })
-}
-
-if (btnAdidas) {
-    btnAdidas.addEventListener('click', () => {
-        cuadroCarrito.innerHTML += '<div id="tenisAdidas" class="cardShop"><img src="' + tenisAdidas.img + '" alt="tenis adidas"><div><p>Modelo: ' + tenisAdidas.marca + '</p><p>costo: ' + tenisAdidas.costo + '</p></div></div>'
-        carritoCompras[varCarrito] = 2499;
-        varCarrito = varCarrito + 1;
-        carritoComprasDatos.push("Tenis: adidas.  $2099.00")
-        sessionStorage.setItem('producto2', JSON.stringify(tenisAdidas))
-    })
-}
-
-
-if (btnSketchers) {
-    btnSketchers.addEventListener('click', () => {
-        cuadroCarrito.innerHTML += '<div id="tenisSketchers" class="cardShop"><img src="' + tenisSketchers.img + '" alt="tenis sketchers"><div><p>Modelo: ' + tenisSketchers.marca + '</p><p>costo: ' + tenisSketchers.costo + '</p></div></div><div></div>'
-        carritoCompras[varCarrito] = 2499;
-        carritoComprasDatos.push("Tenis: sketchers.  $2299.00")
-        sessionStorage.setItem('producto3', JSON.stringify(tenisSketchers))
-    })
-}
