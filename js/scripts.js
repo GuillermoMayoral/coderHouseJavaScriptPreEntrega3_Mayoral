@@ -22,35 +22,6 @@ if (btnContact) {
     });
 }
 
-//array productos
-
-const tenisNike = {
-    id: "1",
-    marca: "nike",
-    costo: "$2,499.00",
-    img: "../img/productos/producto1.png.png",
-}
-
-const tenisAdidas = {
-    id: "2",
-    marca: "adidas",
-    costo: "$2,099.00",
-    img: "../img/productos/producto2.png.png",
-}
-
-const tenisSketchers = {
-    id: "3",
-    marca: "sketchers",
-    costo: "$2,299.00",
-    img: "../img/productos/producto3.png.png",
-}
-
-const carritoCompras = []
-const carritoComprasDatos = []
-
-
-
-
 //valores form productos
 let userProduct = document.getElementById('nombreForm');
 let lastNameProduct = document.getElementById('apellidoForm');
@@ -110,8 +81,6 @@ if (btnPagar) {
 
         datosFactura.innerHTML = '<h1>Factura</h1>' + '<p>Nombre: ' + user + '</p><p>Apellidos: ' + apellidos + '</p><p>Celular de contacto: ' + celular + '</p><p>E-m@il: ' + email;
 
-        // carroFact.innerHTML = carritoComprasDatos;
-
         datosFacturaTotal.innerHTML = '<p>Total: $' + total + '.00</p>';
 
         if (porciento == "20%") {
@@ -137,7 +106,22 @@ if (btnPagar) {
     })
 }
 
+//selectores de productos
+let btnNike = document.getElementById('btnNike')
+let btnAdidas = document.getElementById('btnAdidas')
+let btnSketchers = document.getElementById('btnSketchers')
 
+
+
+let cuadroCarrito = document.getElementById('carroDeComprasTenis')
+
+let varCarrito = 0;
+let varCarritoDatos = 0;
+
+//array productos
+
+const carritoCompras = [0]
+const carritoComprasDatos = []
 
 //fetch
 const lista = document.querySelector(".productosData")
@@ -176,7 +160,6 @@ const esperarApi = async () => {
             carritoCompras[varCarrito] = parseInt(`${carroNike.precio}`);
             varCarrito = varCarrito + 1;
             carritoComprasDatos.push(`Tenis: ${carroNike.nombre}. ${carroNike.precio}`)
-            sessionStorage.setItem('producto1', JSON.stringify(tenisNike))
         })
     }
 
@@ -186,8 +169,6 @@ const esperarApi = async () => {
             carritoCompras[varCarrito] = parseInt(`${carroAdidas.precio}`);
             varCarrito = varCarrito + 1;
             carritoComprasDatos.push(`Tenis: ${carroAdidas.nombre}. ${carroAdidas.precio}`)
-            sessionStorage.setItem('producto2', JSON.stringify(tenisAdidas))
-
         })
     }
 
@@ -197,22 +178,8 @@ const esperarApi = async () => {
             carritoCompras[varCarrito] = parseInt(`${carroSketchers.precio}`);
             varCarrito = varCarrito + 1;
             carritoComprasDatos.push(`Tenis: ${carroSketchers.nombre}. ${carroSketchers.precio}`)
-            sessionStorage.setItem('producto3', JSON.stringify(tenisSketchers))
         })
     }
 }
 
 esperarApi();
-
-
-//selectores de productos
-let btnNike = document.getElementById('btnNike')
-let btnAdidas = document.getElementById('btnAdidas')
-let btnSketchers = document.getElementById('btnSketchers')
-
-
-
-let cuadroCarrito = document.getElementById('carroDeComprasTenis')
-
-let varCarrito = 0;
-let varCarritoDatos = 0;
